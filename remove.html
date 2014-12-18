@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <p>Click on the button to remove data ... </p>
+    <p id="demo"></p>
+    <button id="btn">Shift</button>
+    <script>
+
+        var lang;
+        document.getElementById('demo').innerHTML = lang = ['Ruby', 'Javascript', 'PHP', 'GoLang'];
+
+        document.getElementById('btn').addEventListener('click', function () {
+            lang.shift();
+            document.getElementById('demo').innerHTML = lang.toString();
+        });
+    </script>
+</body>
+</html>
