@@ -12,16 +12,81 @@
         for (var i = 0; i < countries.length; i++) { // loop over all countries
             names.push(countries[i].name);
         }
-        console.log(names);
+        // console.log(names);
 
         // todo: Print out the total world population
         // todo: Print an array of country names which have more than 3 neighbors
         // todo: Print an array of country names which are in a timezone > UTC+8 String.prototype.substring()
         // todo: Print an array of the country names in French
 
+        function printWorldPopulation() {
+            var total = 0;
+            for (var i = 0, len = countries.length; i < len; i++) {
+                total += countries[i].population;
+            }
+            console.log(total);
+        }
+
+        //printWorldPopulation();
+
+        function printCountriesWith3BordersOrMore() {
+            var arr = [];
+            for (var i = 0, len = countries.length; i < len; i++) {
+                if ( countries[i].borders.length > 3 ) {
+                    arr.push(countries[i]);
+                }
+            }
+            console.log(arr);
+        }
+
+        //printCountriesWith3BordersOrMore();
+
+        console.log(Array.isArray(countries[0].timezones));
+        function printCountriesWithTimezone() {
+            var arr = [];
+            for (var i = 0, len = countries.length; i < len; i++) {
+                if ( Array.isArray(countries[i].timezones) ) {
+
+                    if ( +countries[i].timezones[0].substring(4,6) >= 8 ) {
+                        arr.push(countries[i]);
+                    }
+                } else {
+                    // console.log(countries[i]);
+                }
+            }
+            console.log(arr);
+        }
+
+        printCountriesWithTimezone();
+
+        function printCountryNamesInFrench() {
+            var fr = [];
+            for (var i = 0, len = countries.length; i < len; i++) {
+                if ( countries[i].translations && countries[i].translations.fr ) {
+                    fr.push(countries[i].translations.fr);
+                }
+            }
+            console.log(fr);
+        }
+
+        printCountryNamesInFrench();
+
     </script>
+    <style>
+        div:nth-child(1) {
+            text-align: left;
+        }
+        div:nth-child(2) {
+            text-align: right;
+        }
+    </style>
 </head>
 <body>
-
+    <div>
+        Afghanistan: Iran, Pakistan, Turkmenistan, Uzbegistan, Tajakhistan, China
+    </div>
+    <div>
+        Turkmenistan
+    </div>
 </body>
 </html>

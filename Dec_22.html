@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="data.js"></script>
+    <script>
+
+        // print all the neigbors of a country (print full names, not codes)
+
+        function printAllNeighbors() {
+            var codemap = {};
+            for (var i = 0, len = countries.length; i < len; i++) {
+                var code = countries[i].alpha3Code;
+                codemap[code] = countries[i].name;
+            }
+            console.log(codemap);
+
+            for (var i = 0, len = countries.length; i < len; i++) {
+                var str = countries[i].name + ': ';
+                for (var j = 0, len = countries[i].borders.length; j < len; j++) {
+                    var code = countries[i].borders[j];
+                    str +=  + ' ';
+                }
+                console.log(str);
+            }
+        }
+
+        printAllNeighbors();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

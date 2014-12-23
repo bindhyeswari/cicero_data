@@ -7,16 +7,16 @@
 <body>
     <p>Click on the button to remove data ... </p>
     <p id="demo"></p>
-    <button id="btn">Shift</button>
+    <button onclick="shift()" id="btn">Shift</button>
     <script>
 
         var lang;
         document.getElementById('demo').innerHTML = lang = ['Ruby', 'Javascript', 'PHP', 'GoLang'];
 
-        document.getElementById('btn').addEventListener('click', function () {
+        function shift() {
             lang.shift();
             document.getElementById('demo').innerHTML = lang.toString();
-        });
+        }
     </script>
 </body>
 </html>
