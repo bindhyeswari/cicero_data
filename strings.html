@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+
+        var arr = [1,2,3,4]; // var arr = new Array();
+        var squares = arr.map(square);
+
+       /* squares = [];
+        for (var i = 0, len = arr.length; i < len; i++) {
+            var element = square(arr[i]);
+            squares.push(square(element);
+        }*/
+
+        function square(element) {
+            return element * element;
+        }
+
+        console.log(squares);
+
+        function isEven(num) {
+            return num % 2 === 0
+        }
+
+        var evens = [1,2,3,4].filter(isEven);
+        console.log(evens);
+
+        function add(x, y) {
+            return x + y;
+        }
+        var sum = [1,2,3,4].reduce(add);
+        console.log(sum);
+
+        function concatenate(a, b) {
+            return a + ', ' + b;
+        }
+        console.log(['naga', 'anu', 'asdf', 'asdfaffasdf'].reduce(concatenate));
+
+        // TODO: use reduce to print the total population
+
+
+    </script>
+</head>
+<body>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/prototype">String.prototype</a>
+</body>
+</html>
